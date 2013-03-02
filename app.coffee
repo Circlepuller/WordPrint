@@ -1,5 +1,6 @@
 express = require 'express'
-routes = require './routes'
+
+config = require('./config')[process.env.NODE_ENV or 'development']
 
 app = express()
 

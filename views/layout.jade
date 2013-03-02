@@ -2,9 +2,16 @@
 html
   head
     meta(charset='utf-8')
-    title= title
+    title= app.name
+
+    if env == 'development': link(rel='stylesheet', type='text/css', href='/css/${pkg.name}.css')
+    else: link(rel='stylesheet', type='text/css', href='/css/${pkg.name}.min.css')
     
   body
-    block content
+    .container
+      block content
     block scripts
       script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js')
+
+      if env == 'development': script(type='text/javascript', src='/js/#{pkg.name}.js')
+      else: script(type='text/javascript', src='/js/#{pkg.name}.min.js')

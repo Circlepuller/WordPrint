@@ -1,9 +1,9 @@
 extends layout
 
 block content
-  div#magic
-    h1= title
-    p This is a sample paragraph. Welcome to #{title}
+  #magic
+    h1= app.name
+    p This is a sample paragraph. Welcome to #{app.name}
 
 block scripts
   script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js')
